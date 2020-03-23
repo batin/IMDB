@@ -16,9 +16,10 @@
 
 .movie-card {
   max-width: 250px;
-  min-height: 400px !important;
+  min-width: 150px;
+  min-height: 500px !important;
   img {
-    max-width: 150px;
+    max-width: 250px;
   }
   .fav-btn {
     right: 0;

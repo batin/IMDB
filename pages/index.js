@@ -12,12 +12,12 @@ const Home = () => {
   // window.localStorage.setItem('favs', JSON.stringify(store.getFavs))
   const fetchData = async () => {
     const data = await axios.get(
-      `https://omdbapi.com/?apikey=1efe60e&s=${input === '' ? 'Harry Potter' : input}&type=movie`)
+      `http://omdbapi.com/?apikey=1efe60e&s=${input === '' ? 'Harry Potter' : input}&type=movie`)
     const items = data.data.Search
     if (items) {
       store.resetItems()
       await items.map(async item => {
-        const info = await axios.get(`https://omdbapi.com/?apikey=1efe60e&i=${item.imdbID}&plot=full`)
+        const info = await axios.get(`http://omdbapi.com/?apikey=1efe60e&i=${item.imdbID}&plot=full`)
         item.Plot = info.data.Plot
         item.Year = info.data.Released
         item.imdbRating = info.data.imdbRating

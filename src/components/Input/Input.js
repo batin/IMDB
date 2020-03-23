@@ -4,10 +4,7 @@ import Link from 'next/link'
 
 const Input = (props) => {
   return (
-    <div className='input-group input-group-lg position-absolute sticky-top p-5'>
-      <div className='input-group-prepend'>
-        <span className='input-group-text' id='inputGroup-sizing-lg'>Movie Search</span>
-      </div>
+    <div className='input-group input-group-lg position-absolute sticky-top p-5 input-field'>
       <input
         value={props.value}
         onChange={(e) => props.changedtext(e.target.value)}
@@ -18,11 +15,9 @@ const Input = (props) => {
         aria-describedby='inputGroup-sizing-lg'
       />
       <Link href='/favorites'>
-        <div className='input-group-append'>
-          <label className='input-group-text'> <MdFavorite /> </label>
-        </div>
+        <label className='input-group-text ml-2'> <MdFavorite /> </label>
       </Link>
-    </div>
+    </div> 
   )
 }
 
