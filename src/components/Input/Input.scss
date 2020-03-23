@@ -14,6 +14,17 @@
   border: none  !important;
   background-color: $bg !important;
   outline: none !important;
+  &::placeholder {
+    // color: rgba($color: $blue, $alpha: .15) !important;
+    color: red;
+  }
+}
+
+.input-group > .form-control:not(:last-child) {
+  border-radius: 0.25rem !important;
+  &::placeholder {
+    color: rgba($color: $blue, $alpha: .25) !important;
+  }
 }
 
 .form-control:focus {
@@ -26,5 +37,4 @@
 
 .input-field {
   max-width: 500px;
-  border-radius: 0.25rem !important;
 }
