@@ -4,7 +4,6 @@ import Movie from '../Movie/Movie'
 import './Movies.scss'
 
 const Movies = observer((props) => {
-
   const getContent = () => {
     return store.getItems.map((item, index) => {
       return <Movie data={item} key={index} />

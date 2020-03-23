@@ -41,7 +41,6 @@ class Store {
     lscache.set('favs', this.favs)
     this.favs = this.favs.filter(fav => fav.imdbID !== id)
   }
-
 }
 
 decorate(Store, {
