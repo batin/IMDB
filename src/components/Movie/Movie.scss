@@ -1,0 +1,36 @@
+@import "../Colors.scss";
+
+.card {
+  color: $blue !important; 
+  background-color: $bg !important; 
+  border: none  !important; 
+  box-shadow:  20px 20px 60px #cececc, 
+            -20px -20px 60px #ffffff;
+}
+
+.card:hover {
+  border: none  !important;
+  box-shadow: 20px 20px 60px #a9a9a8, 
+            -20px -20px 60px #ffffff;
+}
+
+.movie-card {
+  max-width: 250px;
+  min-height: 400px !important;
+  img {
+    max-width: 150px;
+  }
+  .fav-btn {
+    right: 0;
+    bottom: 0;
+  }
+  .fav {
+    color: $fav;
+    transform:scale(1); transition:transform 0.5s linear;
+  }
+
+  .fav:hover {
+    color: $fav;
+    transform:scale(2); transition:transform 0.2s linear;
+  }
+}
