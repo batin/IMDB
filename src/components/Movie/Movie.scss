@@ -7,31 +7,50 @@
   box-shadow:  20px 20px 60px #cececc, 
             -20px -20px 60px #ffffff;
 }
+@media only screen and (min-width: 760px) {
+  .movie-card {
+    max-width: 250px;
+    min-width: 150px;
+    min-height: 500px !important;
+    img {
+      max-width: 250px;
+    }
+    .fav-btn {
+      right: 0;
+      bottom: 0;
+    }
+    .fav {
+      color: $fav;
+      transform:scale(1); transition:transform 0.5s linear;
+      
+    }
 
-.card:hover {
-  border: none  !important;
-  box-shadow: 20px 20px 60px #a9a9a8, 
-            -20px -20px 60px #ffffff;
+    .fav:hover {
+      color: $fav;
+      transform:scale(2); transition:transform 2.5s linear;
+    }
+  }
+  .card:hover {
+    border: none  !important;
+    box-shadow: 20px 20px 60px #a9a9a8, 
+              -20px -20px 60px #ffffff;
+  } 
 }
 
 .movie-card {
-  max-width: 250px;
-  min-width: 150px;
-  min-height: 500px !important;
-  img {
     max-width: 250px;
-  }
-  .fav-btn {
-    right: 0;
-    bottom: 0;
-  }
-  .fav {
-    color: $fav;
-    transform:scale(1); transition:transform 0.5s linear;
+    min-width: 150px;
+    // min-height: 500px !important;
+    img {
+      // max-width: 250px;
+    }
+    .fav-btn {
+      right: 0;
+      bottom: 0;
+    }
+    .fav {
+      color: $fav;
+      transform:scale(1); transition:transform 0.5s linear;      
+    }
   }
 
-  .fav:hover {
-    color: $fav;
-    transform:scale(2); transition:transform 0.2s linear;
-  }
-}
