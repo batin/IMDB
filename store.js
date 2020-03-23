@@ -3,8 +3,8 @@ import lscache from 'lscache'
 
 class Store {
   constructor () {
+    lscache.set('favs', [])
     this.items = []
-    console.log(lscache.get('favs'))
     this.favs = lscache.get('favs') || []
   }
 

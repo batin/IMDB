@@ -9,7 +9,6 @@ import './main.scss'
 
 const Home = () => {
   const [input, setInput] = useState('')
-  // window.localStorage.setItem('favs', JSON.stringify(store.getFavs))
   const fetchData = async () => {
     const data = await axios.get(
       `https://omdbapi.com/?apikey=1efe60e&s=${input === '' ? 'Harry Potter' : input}&type=movie`)

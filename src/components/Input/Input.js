@@ -17,7 +17,7 @@ const Input = (props) => {
       <Link href='/favorites'>
         <label className='input-group-text ml-2'> <MdFavorite /> </label>
       </Link>
-    </div> 
+    </div>
   )
 }
 
