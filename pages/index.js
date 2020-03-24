@@ -53,7 +53,7 @@ const Home = observer(() => {
   }
 
   const getResults = async () => {
-    const data = await axios.get(`https://omdbapi.com/?apikey=1efe60e&s=${input}&type=${type}`)
+    const data = await axios.get(`https://omdbapi.com/?apikey=c594263d&s=${input}&type=${type}`)
     const items = data.data.Search
     if (items) {
       store.resetItems()
@@ -74,9 +74,9 @@ const Home = observer(() => {
   const fetchDefaultData = async () => {
     setFirst(false)
     const data = await axios.get(
-      `https://omdbapi.com/?apikey=1efe60e&s=${type === 'Movie' ? 'Harry Potter' : 'Friends'}&type=${type}&y=${year}`)
+      `https://omdbapi.com/?apikey=c594263d&s=${type === 'Movie' ? 'Harry Potter' : 'Friends'}&type=${type}&y=${year}`)
     await data.data.Search.map(async item => {
-      const info = await axios.get(`https://omdbapi.com/?apikey=1efe60e&i=${item.imdbID}&plot=full`)
+      const info = await axios.get(`https://omdbapi.com/?apikey=c594263d&i=${item.imdbID}&plot=full`)
       item.Plot = info.data.Plot
       item.Genre = info.data.Genre
       item.Year = info.data.Released
