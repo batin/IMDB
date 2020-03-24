@@ -5,7 +5,7 @@
   color: $bg !important;
   border: none  !important;
   background-color: $fav !important;
-  z-index: 9999999;
+  z-index: 99;
 }
 
 .form-control {
@@ -14,13 +14,9 @@
   border: none  !important;
   background-color: $bg !important;
   outline: none !important;
-  &::placeholder {
-    // color: rgba($color: $blue, $alpha: .15) !important;
-    color: red;
-  }
 }
 
-.input-group > .form-control:not(:last-child) {
+  .input-group > input {
   border-radius: 0.25rem !important;
   &::placeholder {
     color: rgba($color: $blue, $alpha: .25) !important;
@@ -28,13 +24,54 @@
 }
 
 .form-control:focus {
-  box-shadow: 20px 20px 60px #a9a9a8, 
-            -20px -20px 60px #ffffff !important;
+  box-shadow: 20px 20px 20px #d3d2d2, 
+            -20px -20px 20px #ffffff !important;
   border: none  !important;
   background-color: $bg !important;
   outline: none !important;
 }
 
 .input-field {
-  max-width: 500px;
+  max-width: 500px;  
+}
+.filters {
+  .input-group {
+    &:first-child {
+      .input-group-prepend {
+        margin-left: 0px !important;
+      }
+    }
+    .input-group-prepend {
+      label {
+        min-width: 50px;
+      }
+      margin-left: 15px !important;
+    }
+  }
+  .custom-select {
+    box-shadow:  20px 20px 60px #cececc, 
+    -20px -20px 60px #ffffff;
+    border: none  !important;
+    background-color: $bg !important;
+    outline: none !important;
+  }
+  
+  .custom-select:focus {
+    box-shadow: 20px 20px 60px #a9a9a8, 
+    -20px -20px 60px #ffffff !important;
+    border: none  !important;
+    background-color: $bg !important;
+    outline: none !important;
+  }
+
+  @media only screen and (max-width: 760px) {
+    background-color: $bg;
+    width: 100%;
+    flex-direction: column;
+    .input-group {
+      .input-group-prepend {
+        margin-left: 0 !important;
+      }
+    }
+  }
 }

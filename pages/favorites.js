@@ -2,6 +2,7 @@ import Layout from '../src/components/Layout/Layout'
 import Movies from '../src/components/Movies/Movies'
 import { IoMdArrowBack } from 'react-icons/io'
 import Link from 'next/link'
+import store from '../store'
 
 const Favorites = () => {
   return (
@@ -11,7 +12,7 @@ const Favorites = () => {
           <IoMdArrowBack className='back-btn' />
         </div>
       </Link>
-      <Movies />
+      <Movies data={store.getFavs} />
     </Layout>
   )
 }

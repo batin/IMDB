@@ -3,13 +3,8 @@ import lscache from 'lscache'
 
 class Store {
   constructor () {
-    lscache.set('favs', [])
     this.items = []
     this.favs = lscache.get('favs') || []
-  }
-
-  componentDidMount () {
-    console.log('window.innerHeight', window.innerHeight)
   }
 
   get getItems () {
@@ -33,13 +28,13 @@ class Store {
   }
 
   addFav (item) {
-    lscache.set('favs', this.favs)
     this.favs = [...this.favs, item]
+    lscache.set('favs', this.favs)
   }
 
   removeFav (id) {
-    lscache.set('favs', this.favs)
     this.favs = this.favs.filter(fav => fav.imdbID !== id)
+    lscache.set('favs', this.favs)
   }
 }
 
