@@ -1,4 +1,7 @@
-@import "./Colors.scss";
+.cards {
+  min-height: 50vh;
+  margin-top: 80px;
+}
 
 .card {
   color: $blue !important; 
