@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import './Movie.scss'
 import store from '../../../store'
-import placeholder from '../../images/Placeholder.png'
+
 const Movie = (props) => {
   const [isFav, setIsFav] = useState(false)
 
