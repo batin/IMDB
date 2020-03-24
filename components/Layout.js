@@ -4,6 +4,7 @@ const Home = ({ children, page }) => (
     <Head>
       <title>{page}</title>
       <link rel='icon' href='/favicon.ico' />
+      <link rel='stylesheet' href='../styles/index.scss' />
     </Head>
 
     <main>

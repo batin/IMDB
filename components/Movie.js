@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
-import './Movie.scss'
-import store from '../../../store'
+import store from '../store'
 
 const Movie = (props) => {
   const [isFav, setIsFav] = useState(false)

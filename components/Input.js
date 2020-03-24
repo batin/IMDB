@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Input.scss'
 import { MdFavorite } from 'react-icons/md'
 import { FaFilter } from 'react-icons/fa'
 import Link from 'next/link'

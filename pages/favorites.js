@@ -1,5 +1,5 @@
-import Layout from '../src/components/Layout/Layout'
-import Movies from '../src/components/Movies/Movies'
+import Layout from '../components/Layout'
+import Movies from '../components/Movies'
 import { IoMdArrowBack } from 'react-icons/io'
 import Link from 'next/link'
 import store from '../store'

@@ -1,5 +1,4 @@
-import Movie from '../Movie/Movie'
-import './Movies.scss'
+import Movie from './Movie'
 
 const Movies = (props) => {
   const getContent = () => {

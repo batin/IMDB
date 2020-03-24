@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { observer } from 'mobx-react'
 import axios from 'axios'
 import store from '../store'
-import Layout from '../src/components/Layout/Layout'
-import Movies from '../src/components/Movies/Movies'
-import Input from '../src/components/Input/Input'
-
-import './main.scss'
+import Layout from '../components/Layout'
+import Movies from '../components/Movies'
+import Input from '../components/Input'
 
 const Home = observer(() => {
   const [input, setInput] = useState('')
@@ -15,7 +13,7 @@ const Home = observer(() => {
   const [genre, setGenre] = useState('')
   const [year, setYear] = useState('')
   const [items, setItems] = useState(store.getItems)
-
+  const apikey = 'c594263d'
   useEffect(() => {
     if (first && items.length === 0) {
       fetchDefaultData()
@@ -53,13 +51,13 @@ const Home = observer(() => {
   }
 
   const getResults = async () => {
-    const data = await axios.get(`https://omdbapi.com/?apikey=c594263d&s=${input}&type=${type}`)
+    const data = await axios.get(`https://omdbapi.com/?apikey=${apikey}&s=${input}&type=${type}`)
     const items = data.data.Search
     if (items) {
       store.resetItems()
       setItems([])
       await items.map(async item => {
-        const info = await axios.get(`https://omdbapi.com/?apikey=1efe60e&i=${item.imdbID}&plot=full`)
+        const info = await axios.get(`https://omdbapi.com/?apikey=${apikey}&i=${item.imdbID}&plot=full`)
         item.Plot = info.data.Plot
         item.Genre = info.data.Genre
         item.Year = info.data.Released
@@ -74,9 +72,9 @@ const Home = observer(() => {
   const fetchDefaultData = async () => {
     setFirst(false)
     const data = await axios.get(
-      `https://omdbapi.com/?apikey=c594263d&s=${type === 'Movie' ? 'Harry Potter' : 'Friends'}&type=${type}&y=${year}`)
+      `https://omdbapi.com/?apikey=${apikey}&s=${type === 'Movie' ? 'Harry Potter' : 'Friends'}&type=${type}&y=${year}`)
     await data.data.Search.map(async item => {
-      const info = await axios.get(`https://omdbapi.com/?apikey=c594263d&i=${item.imdbID}&plot=full`)
+      const info = await axios.get(`https://omdbapi.com/?apikey=${apikey}&i=${item.imdbID}&plot=full`)
       item.Plot = info.data.Plot
       item.Genre = info.data.Genre
       item.Year = info.data.Released
